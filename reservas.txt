@@ -1,0 +1,8 @@
+Nombre: rivaldo  | Teléfono: 7245814  | Fecha: 2025-10-29  | Hora: 14:00  | Aceptada
+Nombre: rudy  | Teléfono: 65329841  | Fecha: 2025-12-14  | Hora: 19:00  | Rechazada
+Nombre: shirley  | Teléfono: 76131796  | Fecha: 2025-10-09  | Hora: 18:33  | Rechazada
+Nombre: juan perez  | Teléfono: 75141442  | Fecha: 2025-10-07  | Hora: 17:00  | Aceptada
+Nombre: pucio   | Teléfono: 74349  | Fecha: 2006-12-23  | Hora: 11:00  | Rechazada
+Nombre: enrique  | Teléfono: 72757891  | Fecha: 2025-10-15  | Hora: 12:00  | Aceptada
+Nombre: simon  | Teléfono: 79410342  | Fecha: 2025-10-15  | Hora: 16:21  | Rechazada
+Nombre: amy  | Teléfono: 68813  | Fecha: 0002-02-13  | Hora: 02:33  | Aceptada

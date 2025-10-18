@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Club Barber Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a2e8bcb56e.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background: url('img/fondo_1.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .playfair { font-family: 'Playfair Display', serif; }
+
+    .barber-pole {
+      width: 30px;
+      height: 80px;
+      background: linear-gradient(45deg,
+        #cc0000 0%, #cc0000 16.67%,
+        #ffffff 16.67%, #ffffff 33.33%,
+        #0000cc 33.33%, #0000cc 50%,
+        #cc0000 50%, #cc0000 66.67%,
+        #ffffff 66.67%, #ffffff 83.33%,
+        #0000cc 83.33%, #0000cc 100%);
+      background-size: 30px 30px;
+      border-radius: 5px;
+      animation: barber-pole 6s linear infinite;
+    }
+    @keyframes barber-pole {
+      from { background-position: 0 0; }
+      to { background-position: 0 90px; }
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .animate-fade-in { animation: fade-in 1.5s ease-out forwards; }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    .animate-float { animation: float 4s ease-in-out infinite; }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-left: 20px;
+    }
+    .social-icons img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .social-icons img:hover {
+      transform: scale(1.15);
+      box-shadow: 0 6px 18px rgba(212,175,55,0.35);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="bg-stone-900 text-white fixed w-full z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <div class="barber-pole hidden md:block"></div>
+      <span class="text-3xl md:text-4xl font-bold playfair text-amber-400">
+        CLUB BARBER STUDIO
+     </span>
+      </div>
+
+      <div class="hidden md:flex space-x-6 items-center">
+        <a href="productos.html" class="hover:text-amber-400 transition text-lg md:text-xl font-semibold px-3 py-2">Productos</a>
+        <a href="servicios.html" class="hover:text-amber-400 transition text-lg md:text-xl font-semibold px-3 py-2">Servicios</a>
+        <a href="Ubicacion.html" class="hover:text-amber-400 transition text-lg md:text-xl font-semibold px-3 py-2">Ubicación</a>
+
+        <a href="login_barbero.php" class="hover:scale-105 transition duration-300">
+        <img src="img_extras/klipartz.com (1).png" alt="Ingresar Barbero" class="w-18 h-18 md:w-22 md:h-20">
+       </a>
+      </div>
+
+      <div class="md:hidden">
+        <button id="menu-toggle" class="focus:outline-none">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-stone-800 text-white px-4 py-2 space-y-2">
+      <a href="productos.html" class="block hover:text-amber-400">Productos</a>
+      <a href="servicios.html" class="block hover:text-amber-400">Servicios</a>
+    </div>
+  </nav>
+
+  <section id="inicio" class="min-h-screen flex items-center justify-center text-white pt-16">
+    <div class="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-10">
+      <div class="w-full md:w-1/2 flex justify-center">
+        <img src="img/logo.jpg" alt="Club Barber Studio" class="rounded-2xl shadow-lg max-h-[500px] object-cover animate-float">
+      </div>
+      <div class="w-full md:w-1/2 text-center md:text-left">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 playfair animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600">
+          RESERVA YA!
+        </h1>
+        <p class="text-xl md:text-2xl mb-10 max-w-lg animate-fade-in" style="animation-delay:0.5s;">
+          Donde el estilo clásico se encuentra con las tendencias modernas
+        </p>
+
+        <div class="flex items-center justify-center md:justify-start animate-fade-in" style="animation-delay:1s;">
+
+          <a href="reservas.html" 
+             class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 text-lg shadow-lg hover:scale-105">
+            Reservar Cita
+          </a>
+
+          <a href="ver_reserva_cliente.php"
+             class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-md transition duration-300 text-lg shadow-lg hover:scale-105 ml-4">
+            Mis Reservas
+          </a>
+
+          <div class="social-icons">
+            <a href="https://www.tiktok.com/" target="_blank" title="TikTok">
+              <img src="img_extras/tiktok.png" alt="TikTok">
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" title="Facebook">
+              <img src="img_extras/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" title="Instagram">
+              <img src="img_extras/instagram.png" alt="Instagram">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="py-20 bg-stone-100 text-center">
+    <h2 class="text-4xl font-bold mb-10 playfair text-stone-900">Nuestros Servicios</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto px-6">
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+        <i class="fas fa-cut text-4xl text-amber-500 mb-4"></i>
+        <h3 class="text-xl font-bold mb-2">Corte Clásico</h3>
+        <p class="text-gray-600">Cortes de precisión para un look limpio y elegante.</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+        <i class="fas fa-beard text-4xl text-amber-500 mb-4"></i>
+        <h3 class="text-xl font-bold mb-2">Arreglo de Barba</h3>
+        <p class="text-gray-600">Diseño y cuidado de la barba con estilo.</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+        <i class="fas fa-bath text-4xl text-amber-500 mb-4"></i>
+        <h3 class="text-xl font-bold mb-2">Afeitado Premium</h3>
+        <p class="text-gray-600">Experiencia tradicional con toalla caliente.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

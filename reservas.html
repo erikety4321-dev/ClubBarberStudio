@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reserva Aquí - Club Barber Studio</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('img/fondo_1.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .form-container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      width: 320px;
+      text-align: center;
+    }
+    .form-container h2 {
+      margin-bottom: 20px;
+      color: #d4af37;
+    }
+    .form-container label {
+      display: block;
+      text-align: left;
+      margin-top: 10px;
+      color: #333;
+    }
+    .form-container input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-bottom: 2px solid #aaa;
+      background: transparent;
+      outline: none;
+    }
+    .form-container button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: linear-gradient(135deg, #d4af37, #b8860b);
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .form-container button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #b8860b, #d4af37);
+    }
+    .success-message {
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Haz tu reserva</h2>
+    <form action="guardar_reserva.php" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="telefono">Celular:</label>
+      <input type="text" id="telefono" name="telefono" required>
+
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <label for="hora">Hora:</label>
+      <input type="time" id="hora" name="hora" required>
+
+      <button type="submit">Reservar</button>
+    </form>
+
+    <?php
+    // Mostrar mensaje de éxito si viene de guardar_reserva.php
+    if (isset($_GET['exito']) && $_GET['exito'] == 1) {
+        echo "<div class='success-message'></div>";
+    }
+    ?>
+  </div>
+</body>
+</html>

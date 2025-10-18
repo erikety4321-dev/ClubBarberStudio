@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Productos - CLUB BARBER STUDIO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+     
+      background-image: url('img/fondo_1.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #333;
+      line-height: 1.6;
+    }
+
+
+    .navbar {
+      background-color: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .navbar .logo span {
+      color: #fdba00;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #f39c12;
+    }
+
+    .content {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #fdba00;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      color: #000000;
+    }
+
+    .services-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1),
+                  0 0 10px rgba(212, 175, 55, 0.4); 
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 360px;
+      border: 3px solid #d4af37; 
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2),
+                  0 0 15px rgba(212, 175, 55, 0.7); 
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .service-content {
+      padding: 15px;
+      overflow-y: auto;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-content::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .service-content::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 4px;
+    }
+
+    .service-content h3 {
+      font-size: 1.3em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .service-content p {
+      font-size: 0.95em;
+      color: #555;
+      margin: 5px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      font-size: 0.95em;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(135deg, #d4af37, #b8860b);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #b8860b, #d4af37);
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+    }
+
+    .footer {
+      background-color: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 60px;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="img/logo.jpg" alt=" ">
+      <span>Club Barber Studio</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="productos.html">Productos</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h1>Productos</h1>
+    <p>Descubre nuestra línea exclusiva de productos para el cuidado masculino: calidad, estilo y confianza en cada frasco.</p>
+
+    <section class="services-gallery">
+      <div class="service-card">
+        <img src="img/crama para barberia.png" alt="Cremas">
+        <div class="service-content">
+          <div>
+            <h3>Cremas</h3>
+            <p>American Crew</p>
+            <p>Reuzel</p>
+            <p>Schwarzkopf</p>
+            <p>Old Spice</p>
+          </div>
+          <a href="cremas.html" class="btn">Ver más</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="img/cera bandido.jpg" alt="Ceras moldeadoras">
+        <div class="service-content">
+          <div>
+            <h3>Ceras Moldeadoras</h3>
+            <p>Bandido</p>
+            <p>Inmortal</p>
+            <p>Barber Style</p>
+            <p>Black Fix</p>
+          </div>
+          <a href="ceras.html" class="btn">Ver más</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="img/polvo texturizador.jpg" alt="Polvo texturizador">
+        <div class="service-content">
+          <div>
+            <h3>Polvo Texturizador</h3>
+            <p>BIG</p>
+            <p>Immortal NYC</p>
+            <p>slick gorilla</p>
+            <p>red one</p>
+          </div>
+          <a href="polvo.html" class="btn">Ver más</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="img/spray fijador.jpg" alt="Spray para cabello">
+        <div class="service-content">
+          <div>
+            <h3>Spray</h3>
+            <p>Avenue Man Spray</p>
+            <p>L3VEL3</p>
+            <p>Nishman Spray</p>
+          </div>
+          <a href="spray.html" class="btn">Ver más</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="img_crms/maquina_logo.jpg" alt="Máquinas de corte">
+        <div class="service-content">
+          <div>
+            <h3>Máquinas</h3>
+            <p>Shaver</p>
+            <p>Trimmer</p>
+            <p>Corta pelos</p>
+            <p>Cadoras</p>
+          </div>
+          <a href="maquinas.html" class="btn">Ver más</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    &copy; erikety4321@gmail.com - Todos los derechos reservados.
+  </footer>
+</body>
+</html>
+

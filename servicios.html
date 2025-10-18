@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Servicios - Club Barber Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+
+    body {
+      background-image: url('img/fondo_1.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background-color: rgba(17,17,17,0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    .navbar .logo { display: flex; align-items: center; }
+    .navbar .logo img { height: 50px; margin-right: 10px; }
+    .navbar .logo span { color: #fdba00; font-size: 1.5em; font-weight: bold; }
+    .nav-links { list-style: none; display: flex; gap: 25px; }
+    .nav-links a { color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; transition: color 0.3s; }
+    .nav-links a:hover { color: #f39c12; }
+
+    .content {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 40px 20px;
+      text-align: center;
+      background-color: rgba(255,255,255,0.85);
+      border-radius: 12px;
+    }
+
+    h1 { font-size: 3em; margin-bottom: 20px; color: #fdba00; }
+    p { font-size: 1.2em; margin-bottom: 40px; color: #1a1a1a; }
+
+    .services-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 3px solid #d4af37;
+      text-align: center;
+    }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); }
+    .service-card img { width: 100%; height: 180px; object-fit: cover; cursor: pointer; }
+    .service-card h3 { font-size: 1.3em; padding: 15px 10px 5px; color: #333; }
+    .service-card p { font-size: 0.95em; color: #000000; padding: 0 15px 15px; }
+
+  
+    .modal { display: none; position: fixed; z-index: 1000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8);}
+    .modal-content { margin: auto; display: block; max-width: 80%; max-height: 80%; border-radius: 10px; }
+    .close { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
+
+    .footer { background-color: rgba(17,17,17,0.9); color: #ccc; text-align: center; padding: 25px 15px; margin-top: 60px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="img/logo.jpg" alt="CLUB BARBER STUDIO ">
+      <span>CLUB BARBER ESTUDIO</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="productos.html">Productos</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h1>Servicios</h1>
+    <p>Cortes modernos, barba, cejas, faciales y más. Estilo y calidad garantizados en cada visita.</p>
+
+    <section class="services-gallery">
+      <div class="service-card">
+        <img src="img/corte moderno.jpg" alt="Corte moderno" onclick="openModal(this.src)">
+        <h3>Corte Moderno</h3>
+        <p>Estilos actualizados que se adaptan a tu personalidad y marcan tendencia.</p>
+      </div>
+      <div class="service-card">
+        <img src="img/perfilado de barba.jpg" alt="Perfilado de barba" onclick="openModal(this.src)">
+        <h3>Perfilado de Barba</h3>
+        <p>Definición precisa para una barba limpia, elegante y bien cuidada.</p>
+      </div>
+      <div class="service-card">
+        <img src="img/Diseño de Cejas.jpg" alt="Diseño de cejas" onclick="openModal(this.src)">
+        <h3>Diseño de Cejas</h3>
+        <p>Resalta tu mirada con un diseño natural y perfectamente alineado.</p>
+      </div>
+      <div class="service-card">
+        <img src="img/Limpieza Facial.jpg" alt="Faciales masculinos" onclick="openModal(this.src)">
+        <h3>Limpieza Facial</h3>
+        <p>Tratamiento refrescante para mantener tu piel sana y libre de impurezas.</p>
+      </div>
+      <div class="service-card">
+        <img src="img/Depilacion.jpg" alt="Depilaciones" onclick="openModal(this.src)">
+        <h3>Depilaciones</h3>
+        <p>Eliminación del vello no deseado para un acabado limpio y duradero.</p>
+      </div>
+      <div class="service-card">
+        <img src="img/Pigmentacion.jpg" alt="Pigmentación de pelo" onclick="openModal(this.src)">
+        <h3>Pigmentación de Pelo</h3>
+        <p>Devuelve el color y la vitalidad a tu cabello con técnicas profesionales.</p>
+      </div>
+      <div class="service-card">
+        <img src="img/Permanentes.jpg" alt="Permanentes" onclick="openModal(this.src)">
+        <h3>Permanentes</h3>
+        <p>Rizos y ondas definidos que aportan estilo y volumen a tu look.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <footer class="footer">
+    &copy; erikety4321@gmail.com - Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function openModal(src){
+      document.getElementById('modal').style.display = "block";
+      document.getElementById('modal-img').src = src;
+    }
+    function closeModal(){
+      document.getElementById('modal').style.display = "none";
+    }
+  </script>
+</body>
+</html>

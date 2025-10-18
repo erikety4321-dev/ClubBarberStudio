@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Servicios - Club barber studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+
+    body {
+      background-image: url('img/fondo_1.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background-color: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    .navbar .logo { display: flex; align-items: center; }
+    .navbar .logo img { height: 50px; margin-right: 10px; }
+    .navbar .logo span { color: #f39c12; font-size: 1.5em; font-weight: bold; }
+    .nav-links { list-style: none; display: flex; gap: 25px; }
+    .nav-links a { color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; transition: color 0.3s; }
+    .nav-links a:hover { color: #f39c12; }
+
+    .content { max-width: 1100px; margin: 50px auto; padding: 0 20px; text-align: center; }
+    h1 { font-size: 3em; margin-bottom: 20px; color: #faab00; }
+    p { font-size: 1.2em; margin-bottom: 40px; color: #000000; }
+
+    .services-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 3px solid #d4af37;
+      text-align: center;
+    }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); }
+    .service-card img { width: 100%; height: 180px; object-fit: cover; cursor: pointer; }
+    .service-card h3 { font-size: 1.3em; padding: 15px 10px 5px; color: #333; }
+    .service-card p { font-size: 0.95em; color: #666; padding: 0 15px 15px; }
+
+    /* Modal */
+    .modal { display: none; position: fixed; z-index: 1000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8);}
+    .modal-content { margin: auto; display: block; max-width: 80%; max-height: 80%; border-radius: 10px; }
+    .close { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
+
+    .footer { background-color: #111; color: #ccc; text-align: center; padding: 25px 15px; margin-top: 60px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="img/logo.jpg" alt="CLUB BARBER STUDIO ">
+      <span>CLUB BARBER ESTUDIO</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="productos.html">Productos</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h1>CERAS MOLDEADORAS</h1>
+    <p>Nuestras cremas están diseñadas para brindar hidratación, protección y estilo.</p>
+
+    <section class="services-gallery">
+      <div class="service-card">
+        <img src="img/CREMA BANDIDO.jpg" alt="Corte moderno" onclick="openModal(this.src)">
+        <h3>BANDIDO</h3>
+        <p>Bandido es ideal para lograr un afeitado suave y preciso, protegiendo la piel contra irritaciones y enrojecimiento. Su fórmula hidrata profundamente, dejando una sensación fresca y agradable después del rasurado. Además, aporta un ligero aroma masculino que realza la experiencia en la barbería.</p>
+      </div>
+      <div class="service-card">
+        <img src="img/INMORTAL.jpg" alt="Perfilado de barba" onclick="openModal(this.src)">
+        <h3>INMORTAL</h3>
+        <p>Inmortal está diseñada para brindar un afeitado duradero y sin irritaciones, cuidando la piel con su fórmula nutritiva. Proporciona hidratación intensa y una sensación de frescura que acompaña todo el día. Su textura ligera permite un deslizamiento perfecto de la cuchilla, garantizando un acabado limpio y profesional.</p>
+      </div>
+      <div class="service-card">
+        <img src="img_crms/cera_2.webp" alt="Barber Style" onclick="openModal(this.src)">
+        <h3>Barber Style</h3>
+        <p>La Cera Barber Style combina estilo y rendimiento en cada aplicación. Su fórmula especial protege la piel durante el afeitado, evitando cortes e irritaciones, mientras aporta hidratación y frescura duradera. Ideal para clientes que buscan un acabado moderno, limpio y con la energía de una marca reconocida.</p>
+      </div>
+      <div class="service-card">
+        <img src="img_crms/cera_3.webp" alt="Faciales masculinos" onclick="openModal(this.src)">
+        <h3>BLACK FIX</h3>
+        <p>La cera Black Fix ofrece una fijación firme y duradera, ideal para peinados con carácter y definición. Su fórmula ligera no deja residuos grasos, aportando un acabado limpio y elegante. Además, hidrata el cabello mientras mantiene el control total durante todo el día.</p>
+      </div>
+    </section>
+  </main>
+
+
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <footer class="footer">
+    &copy;  erikety4321@gmail.com - Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function openModal(src){
+      document.getElementById('modal').style.display = "block";
+      document.getElementById('modal-img').src = src;
+    }
+    function closeModal(){
+      document.getElementById('modal').style.display = "none";
+    }
+  </script>
+</body>
+</html>

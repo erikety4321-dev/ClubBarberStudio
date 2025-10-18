@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Servicios - Club Barber Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif;}
+
+    body {
+      background-image: url('img/fondo_1.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background-color: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    .navbar .logo { display:flex; align-items:center; }
+    .navbar .logo img { height:50px; margin-right:10px; }
+    .navbar .logo span { color:#f39c12; font-size:1.5em; font-weight:bold; }
+    .nav-links { list-style:none; display:flex; gap:25px; }
+    .nav-links a { color:#fff; text-decoration:none; font-weight:bold; text-transform:uppercase; transition: color 0.3s; }
+    .nav-links a:hover { color:#f39c12; }
+
+    .content { max-width:1100px; margin:50px auto; padding:0 20px; text-align:center; }
+    h1 { font-size:3em; margin-bottom:20px; color:#faab00; }
+    p { font-size:1.2em; margin-bottom:40px; color:#000; }
+
+    .services-gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:25px; }
+
+    .service-card {
+      background-color:#fff;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border:3px solid #d4af37;
+      text-align:center;
+      cursor:pointer;
+    }
+
+    .service-card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2); }
+    .service-card img { width:100%; height:180px; object-fit:cover; }
+
+    .service-card h3 { font-size:1.3em; padding:15px 10px 5px; color:#333; }
+    .service-card p { font-size:0.95em; color:#666; padding:0 15px 15px; }
+
+    .footer { background-color:#111; color:#ccc; text-align:center; padding:25px 15px; margin-top:60px; font-size:0.95em; }
+
+
+    #imageModal {
+      display:none;
+      position:fixed;
+      z-index:999;
+      left:0; top:0;
+      width:100%; height:100%;
+      background-color:rgba(0,0,0,0.8);
+      justify-content:center; align-items:center;
+    }
+    #imageModal img {
+      max-width:90%; max-height:80%; border-radius:15px;
+    }
+    #closeModal {
+      position:absolute; top:20px; right:30px;
+      color:white; font-size:40px; cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="img/logo.jpg" alt="CLUB BARBER STUDIO">
+      <span>CLUB BARBER ESTUDIO</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="productos.html">Productos</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h1>MAQUINAS DE CORTES</h1>
+    <p>"Nuestras máquinas de cortar están diseñadas para brindar precisión, comodidad y estilo en cada corte."</p>
+
+    <section class="services-gallery">
+      <div class="service-card">
+        <img src="img_crms/maquina_1.webp" alt="Maquina Shaver">
+        <h3>Maquina Shaver</h3>
+        <p>1200.BS</p>
+      </div>
+      <div class="service-card">
+        <img src="img_crms/maquina_2.webp" alt="Hair Trimmer">
+        <h3>Hair Trimmer</h3>
+        <p>120.BS</p>
+      </div>
+      <div class="service-card">
+        <img src="img_crms/maquina_3.jpg" alt="5-Star Magic Clip N.°8451">
+        <h3>5-Star Magic Clip N.°8451</h3>
+        <p>1000.BS</p>
+      </div>
+      <div class="service-card">
+        <img src="img_crms/maquina_4.jpg" alt="WINNER 2200W">
+        <h3>WINNER 2200W</h3>
+        <p>460.BS</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    &copy; erikety4321@gmail.com - Todos los derechos reservados.
+  </footer>
+
+  
+  <div id="imageModal">
+    <span id="closeModal">&times;</span>
+    <img id="modalImg" src="">
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.service-card img');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeModal = document.getElementById('closeModal');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', (e) => {
+      if(e.target === modal) modal.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
